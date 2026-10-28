@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>play</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        
+        .game {
+            background: rgb(254, 208, 159);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px #fd8139;
+        }
+        
+        h1 {
+            color: #fd8139;
+        }
+        
+        input,
+        button {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        input {
+            border: 1px solid #fd8139;
+            font: #fd8139;
+        }
+        
+        button {
+            background: #fd8139;
+            color: white;
+            border: none;
+        }
+        
+        button:hover {
+            background: #dc5304;
+        }
+        
+        #message {
+            min-height: 24px;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: #16a34a;
+        }
+        
+        .error {
+            color: #dc2626;
+        }
+        
+        .info {
+            color: #fd8139;
+        }
+        
+        .settings {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .settings label {
+            display: block;
+            text-align: left;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+        
+        .settings input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game">
+        <h1>Guess the Number</h1>
+
+        <p id="rangeText">Guess a number between 1 and 100</p>
+
+        <form id="guessForm">
+            <input type="number" id="guessInput" placeholder="Enter your guess" required>
+
+            <button type="submit">Check Guess</button>
+        </form>
+
+        <p id="message" class="info" aria-live="polite">
+            Good luck!
+        </p>
+
+        <p>Attempts: <span id="attempts">0</span></p>
+
+        <button type="button" id="newGameButton">
+            New Game
+        </button>
+
+        <div class="settings">
+            <h3>Game Settings</h3>
+
+            <label for="minInput">Minimum number</label>
+            <input type="number" id="minInput" value="1" required>
+
+            <label for="maxInput">Maximum number</label>
+            <input type="number" id="maxInput" value="100" required>
+
+            <button type="button" id="applyButton">
+                Apply Range And Start again
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
